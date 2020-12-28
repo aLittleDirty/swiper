@@ -1,32 +1,37 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="swiper-container">
+    <img class="swiper-image" v-for="(item, index) in imageList" :key="index" :src="item.src"/>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  data() {
+    return{
+      imageList: [{
+        src: require('./assets/bg.jpeg')
+      },{
+        src: require('./assets/bg.jpeg')
+      },{
+        src: require('./assets/bg.jpeg')
+      },{
+        src: require('./assets/bg.jpeg')
+      },{
+        src: require('./assets/bg.jpeg')
+      }]
     }
   }
 }
+</script>
+<style scoped>
+  .swiper-container {
+    border: 1px solid #000000;
+    width: 1000px;
+    height: 100px;
+  }
+
+  .swiper-container .swiper-image {
+    width: 200px;
+    height: 100px;
+  }
+
 </style>
